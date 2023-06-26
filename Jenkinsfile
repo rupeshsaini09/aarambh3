@@ -32,7 +32,7 @@ pipeline {
     stage('Deploying webapp into container') {
       steps {
         script {
-          def output = sh(script: "echo \($docker container ls -q"), returnStdout: true)
+          def output = sh(script: "echo \$(docker container ls -q"), returnStdout: true)
           docker container rm --force "${output}"
           sh "docker container run -d -p 80:80 rupeshsaini09/aarambh3"
         }
