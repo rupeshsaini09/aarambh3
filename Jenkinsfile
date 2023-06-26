@@ -28,6 +28,13 @@ pipeline {
           }
         }
       }
+    stage('Deploying webapp into container') {
+      steps {
+        script {
+          sh "docker container run -d -p 80:80 rupeshsaini09/aarambh3"
+        }
+      }
+    }
     }
   }
 }
