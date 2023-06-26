@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Pulling Latest Code From GitHub') {
       steps {
-        git 'https://github.com/rupeshsaini09/rupesh-webapp.git'
+        git 'https://github.com/rupeshsaini09/aarambh3.git'
       }
     }
     stage('Build image') {
@@ -29,15 +29,15 @@ pipeline {
         }
       }
     }
-    stage('Deploying webapp to Kubernetes') {
-      steps {
-        script {
-          sh "ls"
-          sh 'kubectl apply -f app_deploy.json'
-          sh "pwd"
-          sh "ip a"
-        }
-      }
-    }
+#    stage('Deploying webapp to Kubernetes') {
+#      steps {
+#        script {
+#          sh "ls"
+#          sh 'kubectl apply -f app_deploy.json'
+#          sh "pwd"
+#          sh "ip a"
+#        }
+#      }
+#    }
   }
 }
