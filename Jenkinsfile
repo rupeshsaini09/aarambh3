@@ -28,6 +28,7 @@ pipeline {
           }
         }
       }
+    }
     stage('Deploying webapp into container') {
       steps {
         script {
